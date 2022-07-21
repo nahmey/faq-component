@@ -1,0 +1,25 @@
+{
+	"name" : "faq-component",
+	"license": "MIT",
+  	"main": "src/main.js",
+	"version" : "0.0.1",
+	"description": "Simple FAQ component for VUE.JS made with Bootstrap",
+  	"license": "MIT",
+  	"author": "Julien Kennel",
+  	"keywords": [
+	    "vuejs",
+	    "FAQ",
+	    "bootstrap",
+	    "package"
+	],
+	"repository": {
+		"type": "git",
+	    "url": "git://github.com/nahmey/faq-component.git"
+	},
+	"bugs": {
+	    "url": "https://github.com/nahmey/faq-component/issues/issues"
+	},
+	"files": [
+	    "src/*",
+	]
+}
