@@ -1,75 +1,59 @@
-# light-vue-timepicker
+# Faq-component
 
 <!-- ![alt text](https://julien-kennel.fr/images/git/table.PNG) -->
 
-Simple timepicker for VUE.JS made with Bootstrap
+Simple FAQ for VUE.JS made with Bootstrap
 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
+- [Database structure](#database)
 - [Usage](#example-usage)
-- [Retrieve Data](#retrieve-data)
 - [Props](#props)
 - [Example](#example)
 
 ## Dependencies
 * Vue.js. Required.
 * Bootstrap (CSS). Required.
-* Fontawesome. Optional. (https://fontawesome.com/)
 
-## Installing
+## Installation
 
 Install with npm:
 ```bash
-npm i light-vue-timepicker
+npm i faq-component
 ```
+
+## Database
+table categories :
+- id (integer PK)
+- nom (varchar 255)
+- nom_interne (varchar 255)
+
+table faqs :
+- id (ineger PK)
+- categorie_id (integer FK categories)
+- object (varcher 255)
+- question (text)
+- reponse (text)
 
 Import globally in app.js:
 
 ```javascript
-import LightVueTimepicker from 'light-vue-timepicker';
-Vue.component('light-vue-timepicker', LightVueTimepicker);
-
-
-
+import FaqComponent from 'faq-component';
+Vue.component('faq-component', FaqComponent);
 ```
 
 ## Usage
 ```html
-<light-vue-timepicker></light-vue-timepicker>
-```
-
-## Retrieve data
-
-```javascript
-yourVmodel.hour
-yourVmodel.minute
-yourVmodel.second
-yourVmodel.a
+<faq-component :api_url="'your_api_url'"></faq-component>
 ```
 
 ## Props
 
 | Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Type | Description | Default
 | ----------------- | :--- | :--- | :--- |
-| `hourRange`      | `Array` | Range of hours which displayed (ex ['8-12', '14-19', '22']) | ['00-23'] |
-| `minuteRange`      | `Array` | Range of minutes which displayed (ex ['0-30']) | ['00-59'] |
-| `secondRange`      | `Array` | Range of secondes which displayed (ex ['0-30']) | ['00-59'] |
-| `classe`      | `String` | class(boostrap or other) for input hour and minute | form-control col-5 |
-| `format`      | `String` | Format 12 or 24 | 24 |
-| `lang`      | `String` | lang fr or en  | null (display HH MM) |
-| `withHour`      | `Boolean` | Display input hour  | true |
-| `withMinute`      | `Boolean` | Display input minute  | true |
-| `withSecond`      | `Boolean` | Display input second  | false |
-
+| `api_url`      | `String` | URL that calls data |  |
 
 ## Example
 ```html
-<light-vue-timepicker
-v-model="time"
-lang="en"
-:hourRange="['8-12', '14-19', '21']"
-:minuteRange="['30', '40', '55-57']"
-:withSecond="true"
->
-</light-vue-timepicker>
+<faq :api_url="'http://your/api/url'"></faq>
 ```

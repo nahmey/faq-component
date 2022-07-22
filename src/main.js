@@ -1,4 +1,4 @@
-import FaqComponent from 'faq-component.vue';
+import FaqComponent from './faq-component.vue';
 
 function install(Vue) {
     if (install.installed) return;
