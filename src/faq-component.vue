@@ -26,6 +26,13 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-12" v-show="faq.length == 0">
+				<div class="card">
+					<div class="card-body">
+						La FAQ est vide pour le moment. Merci de revenir plus tard.
+					</div>
+				</div>
+			</div>
 		</div>
 
 		
