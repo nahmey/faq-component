@@ -2,7 +2,7 @@
 	"name" : "faq-component",
 	"license": "MIT",
   	"main": "src/main.js",
-	"version" : "0.0.4",
+	"version" : "0.0.5",
 	"description": "Simple FAQ component for VUE.JS made with Bootstrap",
   	"license": "MIT",
   	"author": "Julien Kennel",
