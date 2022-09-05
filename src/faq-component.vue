@@ -11,7 +11,7 @@
 		</div>
 
 		<div class="d-flex flex-wrap mt-4">
-			<div class="col-12 col-lg-8" v-if="faqs.length > 0">
+			<div class="col-12 col-lg-8" v-if="faqs.length > 0 && faq.length > 0">
 				<div class="card">
 					<div class="card-header">
 						Categorie {{categorie.nom}}
@@ -26,7 +26,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12" v-else>
+			<div class="col-12" v-else-if="faqs.length === 0">
 				<div class="card">
 					<div class="card-body">
 						La FAQ est vide pour le moment. Merci de revenir plus tard.
